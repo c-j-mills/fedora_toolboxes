@@ -9,11 +9,16 @@
 
 NAME=neovim
 RUN="toolbox run --container $NAME"
-APPLICATIONS="neovim python3-pip golang rust cargo java-latest-openjdk-devel chafa fd-find "
+APPLICATIONS="neovim chafa fd-find golang python3-pip python3-isort black rustup java-latest-openjdk-devel "
 
 # Create container
 toolbox rm --force $NAME || true
 toolbox create --container $NAME
 
-## Install applications
+# Install applications
 $RUN sudo dnf install -y $APPLICATIONS
+
+## Install rust components
+$RUN rustup-init -y --no-modify-path
+$RUN cargo install stylua  # Lua linter
+
