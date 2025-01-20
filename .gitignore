@@ -1,0 +1,6 @@
+# Ignore these "in progress" directories.
+citrix/
+
+# Ignore any VIM swap files
+**/*.swp
+
