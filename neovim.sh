@@ -24,7 +24,7 @@ $RUN sudo dnf install -y $APPLICATIONS
 
 # Install Lazygit
 $RUN sudo dnf copr enable -y totalfreak/lazygit
-dnf install -y lazygit
+$RUN sudo dnf install -y lazygit
 
 ## Install rust components
 $RUN rustup-init -y --no-modify-path
