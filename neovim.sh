@@ -9,7 +9,8 @@
 
 NAME=neovim
 RUN="toolbox run --container $NAME"
-APPLICATIONS="neovim chafa fd-find golang python3-pip python3-isort black rustup java-latest-openjdk-devel "
+APPLICATIONS="neovim chafa fd-find golang htop ncdu python3-pip python3-isort black rustup \
+              java-latest-openjdk-devel "
 
 # Create container
 toolbox rm --force $NAME || true
