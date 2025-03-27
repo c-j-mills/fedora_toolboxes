@@ -9,9 +9,8 @@
 
 NAME=publishing
 RUN="toolbox run --container $NAME"
-APPLICATIONS="asciidoctor dvdbackup ghostscript GraphicsMagick graphviz \
-              pandoc python3-pip rclone rubygem-asciidoctor-pdf youtube-dl \
-              perl-Image-ExifTool "
+APPLICATIONS="asciidoctor dvdbackup ffmpeg ghostscript GraphicsMagick graphviz \
+              pandoc python3-pip rclone rubygem-asciidoctor-pdf perl-Image-ExifTool "
 # libdvdcss libray 
 
 # Create container
@@ -25,7 +24,13 @@ $RUN sudo dnf install -y \
 
 # Install publishing applications
 
-## Install remaining applications
+## Install applications
 $RUN sudo dnf install -y $APPLICATIONS
+
+## Install `libray` (TODO: Not working?)
 #$RUN sudo pip install libray
+
+# Install `yt-dl'
+$RUN sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dl
+$RUN sudo chmod a+rx /usr/local/bin/yt-dl
 
