@@ -9,8 +9,8 @@
 
 NAME=publishing
 RUN="toolbox run --container $NAME"
-APPLICATIONS="asciidoctor dvdbackup ffmpeg ghostscript GraphicsMagick graphviz \
-              pandoc python3-pip rclone rubygem-asciidoctor-pdf perl-Image-ExifTool "
+APPLICATIONS="asciidoctor dvdbackup ffmpeg ghostscript GraphicsMagick graphviz pandoc pdftk \
+              python3-pip rclone rubygem-asciidoctor-pdf perl-Image-ExifTool "
 # libdvdcss libray 
 
 # Create container
